@@ -126,8 +126,8 @@ def map(fn):
         function : a function that takes a list and applies `fn` to each element
     """
     # TODO: Implement for Task 0.3.
-    def map_fn(lst):
-        return map(fn, lst)
+    def map_fn(ls):
+        return [fn(elt) for elt in ls]
     return map_fn
 
 
@@ -153,7 +153,9 @@ def zipWith(fn):
 
     """
     # TODO: Implement for Task 0.3.
-    raise NotImplementedError('Need to implement for Task 0.3')
+    def map2_func(ls1, ls2):
+        return [fn(elt1, elt2) for elt1, elt2 in zip(ls1, ls2)]
+    return map2_func
 
 
 def addLists(ls1, ls2):
@@ -179,7 +181,12 @@ def reduce(fn, start):
 
     """
     # TODO: Implement for Task 0.3.
-    raise NotImplementedError('Need to implement for Task 0.3')
+    def reduce_func(ls):
+        result = start
+        for elt in ls:
+            result = fn(result, elt)
+        return result
+    return reduce_func
 
 
 def sum(ls):
@@ -187,7 +194,7 @@ def sum(ls):
     Sum up a list using :func:`reduce` and :func:`add`.
     """
     # TODO: Implement for Task 0.3.
-    raise NotImplementedError('Need to implement for Task 0.3')
+    return reduce(add, 0)(ls)
 
 
 def prod(ls):
@@ -195,4 +202,4 @@ def prod(ls):
     Product of a list using :func:`reduce` and :func:`mul`.
     """
     # TODO: Implement for Task 0.3.
-    raise NotImplementedError('Need to implement for Task 0.3')
+    return reduce(mul, 1)(ls)
