@@ -43,9 +43,14 @@ class Module:
             dict: Each name (key) and :class:`Parameter` (value) under this module.
         """
         # TODO: Implement for Task 0.4.
-        new_dict = self._parameters
-        for module in self.modules():
-            new_dict = {**new_dict, **module._parameters}
+        new_dict = {}
+        for key, value in self._parameters.items():
+            new_dict[key] = value
+        for module_name, module_class in self._modules.items():
+            # print(module.__dict__['_parameters'])
+            for key, value in module_class.__dict__['_parameters'].items():
+                key = str(module_name) + '.' + key
+                new_dict[key] = value
         return new_dict
 
     def parameters(self):

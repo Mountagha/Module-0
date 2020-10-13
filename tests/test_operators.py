@@ -45,7 +45,7 @@ def test_distribute(x, y, z):
     :math:`z \times (x + y) = z \times x + z \times y`
     """
     # TODO: Implement for Task 0.2.
-    assert operators.mul(z, operators.add(x + y)) == \
+    assert operators.mul(z, operators.add(x, y)) == \
         operators.add(operators.mul(z, x), operators.mul(z, y))
 
 
