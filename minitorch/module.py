@@ -47,8 +47,7 @@ class Module:
         for key, value in self._parameters.items():
             new_dict[key] = value
         for module_name, module_class in self._modules.items():
-            # print(module.__dict__['_parameters'])
-            for key, value in module_class.__dict__['_parameters'].items():
+            for key, value in module_class._parameters.items():
                 key = str(module_name) + '.' + key
                 new_dict[key] = value
         return new_dict
