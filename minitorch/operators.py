@@ -71,13 +71,13 @@ def relu(x):
     (See `<https://en.wikipedia.org/wiki/Rectifier_(neural_networks)>`_ .)
     """
     # TODO: Implement for Task 0.1.
-    return x if x > 0 else 0
+    return x if x > 0.0 else 0.0
 
 
 def relu_back(x, y):
     ":math:`f(x) =` y if x is greater than 0 else 0"
     # TODO: Implement for Task 0.1.
-    return y if x > 0 else 0
+    return y if x > 0.0 else 0.0
 
 
 EPS = 1e-6
