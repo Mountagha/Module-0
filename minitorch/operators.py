@@ -60,8 +60,7 @@ def sigmoid(x):
 
     """
     # TODO: Implement for Task 0.1.
-    expo_value = math.exp(-x)
-    return 1.0 / (1.0 + expo_value) if x >= 0 else expo_value / (1.0 + expo_value)
+    return 1.0 / (1.0 + math.exp(-x)) if x >= 0 else math.exp(x) / (1.0 + math.exp(x))
 
 
 def relu(x):
