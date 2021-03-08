@@ -11,7 +11,7 @@ The project is organized into 5 modules. Each module is build upon the precedent
 * [Module-3](https://github.com/Mountagha/Module-3)
 * [Module-4](https://github.com/Mountagha/Module-4)
 
-This is [Module-0](https://github.com/Mountagha/Module-0). It is focused on introducing several core technologies used for testing and debugging futures models and also some basic mathematical foundations.
+This is [Module-0](https://github.com/Mountagha/Module-0). It is focused on introducing several core technologies used for testing and debugging future models and also some basic mathematical foundations.
 
 ### Notes
 
