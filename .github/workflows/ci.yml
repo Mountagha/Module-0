@@ -23,5 +23,6 @@ jobs:
         pip install -Ue .
         python -c "import minitorch"
     - name: Test the code
+      run: |
         python run_tests.py
       
