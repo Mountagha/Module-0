@@ -1,0 +1,27 @@
+name: CI for running tests
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up python 3.9
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        if [ -f requirements.extra.txt ]; then pip install -r requirements.extra.txt; fi
+        pip install -Ue .
+        python -c "import minitorch"
+    - name: Test the code
+        python run_tests.py
+      
