@@ -22,14 +22,12 @@ class Module:
 
     def train(self):
         "Set the mode of this module and all descendent modules to `train`."
-        # TODO: Implement for Task 0.4.
         self.mode = "train"
         for module in self.modules():
             module.mode = "train"
 
     def eval(self):
         "Set the mode of this module and all descendent modules to `eval`."
-        # TODO: Implement for Task 0.4.
         self.mode = "eval"
         for module in self.modules():
             module.mode = "eval"
@@ -42,7 +40,6 @@ class Module:
         Returns:
             dict: Each name (key) and :class:`Parameter` (value) under this module.
         """
-        # TODO: Implement for Task 0.4.
         new_dict = {}
         for key, value in self._parameters.items():
             new_dict[key] = value
