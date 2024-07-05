@@ -6,43 +6,36 @@ import math
 
 def mul(x, y):
     ":math:`f(x, y) = x * y`"
-    # TODO: Implement for Task 0.1.
     return x * y
 
 
 def id(x):
     ":math:`f(x) = x`"
-    # TODO: Implement for Task 0.1.
     return x
 
 
 def add(x, y):
     ":math:`f(x, y) = x + y`"
-    # TODO: Implement for Task 0.1.
     return x + y
 
 
 def neg(x):
     ":math:`f(x) = -x`"
-    # TODO: Implement for Task 0.1.
     return -x
 
 
 def lt(x, y):
     ":math:`f(x) =` 1.0 if x is less than y else 0.0"
-    # TODO: Implement for Task 0.1.
     return 1.0 if x < y else 0.0
 
 
 def eq(x, y):
     ":math:`f(x) =` 1.0 if x is equal to y else 0.0"
-    # TODO: Implement for Task 0.1.
     return 1.0 if x == y else 0.0
 
 
 def max(x, y):
     ":math:`f(x) =` x if x is greater than y else y"
-    # TODO: Implement for Task 0.1.
     return x if x > y else y
 
 
@@ -59,7 +52,6 @@ def sigmoid(x):
     for stability.
 
     """
-    # TODO: Implement for Task 0.1.
     return 1.0 / (1.0 + math.exp(-x)) if x >= 0 else math.exp(x) / (1.0 + math.exp(x))
 
 
@@ -69,13 +61,11 @@ def relu(x):
 
     (See `<https://en.wikipedia.org/wiki/Rectifier_(neural_networks)>`_ .)
     """
-    # TODO: Implement for Task 0.1.
     return x if x > 0.0 else 0.0
 
 
 def relu_back(x, y):
     ":math:`f(x) =` y if x is greater than 0 else 0"
-    # TODO: Implement for Task 0.1.
     return y if x > 0.0 else 0.0
 
 
@@ -105,6 +95,10 @@ def inv_back(a, b):
     return -(1.0 / a ** 2) * b
 
 
+def is_close(x, y):
+    return abs(x - y) < 1e-2
+
+
 ## Task 0.3
 ## Higher-order functions.
 
@@ -124,9 +118,10 @@ def map(fn):
     Returns:
         function : a function that takes a list and applies `fn` to each element
     """
-    # TODO: Implement for Task 0.3.
+
     def map_fn(ls):
         return [fn(elt) for elt in ls]
+
     return map_fn
 
 
@@ -151,9 +146,10 @@ def zipWith(fn):
         applying fn(x, y) one each pair of elements.
 
     """
-    # TODO: Implement for Task 0.3.
+
     def map2_func(ls1, ls2):
         return [fn(elt1, elt2) for elt1, elt2 in zip(ls1, ls2)]
+
     return map2_func
 
 
@@ -179,12 +175,13 @@ def reduce(fn, start):
         fn(x_1, x_0)))`
 
     """
-    # TODO: Implement for Task 0.3.
+
     def reduce_func(ls):
         result = start
         for elt in ls:
             result = fn(result, elt)
         return result
+
     return reduce_func
 
 
@@ -192,7 +189,6 @@ def sum(ls):
     """
     Sum up a list using :func:`reduce` and :func:`add`.
     """
-    # TODO: Implement for Task 0.3.
     return reduce(add, 0)(ls)
 
 
@@ -200,5 +196,4 @@ def prod(ls):
     """
     Product of a list using :func:`reduce` and :func:`mul`.
     """
-    # TODO: Implement for Task 0.3.
     return reduce(mul, 1)(ls)
